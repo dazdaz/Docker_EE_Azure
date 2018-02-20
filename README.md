@@ -78,8 +78,9 @@ Windows admin password : P@ssword1234
 
 4.
 Goto Docker Resource Group / Deployment / Check Status
+</pre>
 
-
+<pre>
 5.
 Wait 5 minutes after deployment has completed before you can login to UCP and DTR.
 
