@@ -23,7 +23,8 @@ AD ServicePrincipal App Secret:   1234567890qnRn8888888888aaa
 AD ServicePrincipal Tenant ID:    721223342424-4444-5555-2d7cd011daaa
 ```
 
-## 3. Copy in your SSH public key into the web ui - This is just an example, and not a live key.
+## 3. Copy in your SSH public key into the web ui
+* This is just an example, and not a live key.
 ```
 ubuntu1704:~$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAmLmwkzQDjEOW1Rj3TP5NldVDqUODVH9xuYrkeaSkxtdP
