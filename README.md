@@ -107,7 +107,7 @@ Copy and paste the config below.
 <pre>
 
 
-<h2>Additional tasks</h2>
+## Additional Tasks
 <pre>
 
 Download UCP Bundle
