@@ -1,7 +1,6 @@
 Instructions on howto deploy Docker Enterprise Edition onto Azure
 
-<pre>
-1. Deploy Docker Enterprise Edition 17.06.2.
+## 1. Deploy Docker Enterprise Edition 17.06.2.
 The Docker store points back to the Azure marketplace, so use either link.
 
 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/docker.dockerdatacenter?tab=Overview
@@ -13,15 +12,19 @@ https://docs.docker.com/docker-for-azure/
 Best practices on deploying Docker EE :
 https://success.docker.com/article/Docker_Reference_Architecture-_Docker_EE_Best_Practices_and_Design_Considerations
 
-2. Create the SP
+
+## 2. Create the SP
+'''
 docker run -ti docker4x/create-sp-azure dockerspdemo
 
 Your access credentials ==================================================
 AD ServicePrincipal App ID:       071aaaaa-333-4444-a079-888888888888
 AD ServicePrincipal App Secret:   1234567890qnRn8888888888aaa
 AD ServicePrincipal Tenant ID:    721223342424-4444-5555-2d7cd011daaa
+'''
 
-3. Copy in your SSH public key into the web ui - This is just an example, and not a live key.
+## 3. Copy in your SSH public key into the web ui - This is just an example, and not a live key.
+'''
 ubuntu1704:~$ cat .ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAmLmwkzQDjEOW1Rj3TP5NldVDqUODVH9xuYrkeaSkxtdP
 J8D9Hz+XAWnGAXdaIkCVOw2YEfHKWSo6befgNxiS+AKS+S+wM/bJpc4qOLe5ozFjZPNRHcw5O8WkgP5g
@@ -72,13 +75,11 @@ dFlYUk1aVzVuZEdnaU9qRTJPQ3dpWm05eWJXRjBWR0ZwYkNJNkltWlJJaXdpZEdsdFpTSTZJakl3TVRn
 1 x Windows UCP worker
 
 Windows admin password : P@ssword1234
+'''
 
-4.
-Goto Docker Resource Group / Deployment / Check Status
-</pre>
+## 4. Goto Docker Resource Group / Deployment / Check Status
 
-<pre>
-5.Deploy a container into Swarm
+## 5.Deploy a container into Swarm
 
 Wait 5 minutes after deployment has completed before you can login to UCP and DTR.
 
@@ -103,14 +104,10 @@ Mode / Containers
 Copy and paste the config below.
 
 
---- END ---
-<pre>
-
 
 ## Additional Tasks
-<pre>
-
-Download UCP Bundle
+*Download UCP Bundle
+'''
 source env.sh
 
 
@@ -162,21 +159,23 @@ services:
       replicas: 1
     ports:
       - 8080:8080
+'''
 
-END
-------
-# Running a container in Docker Swarm
+## Running a container in Docker Swarm
+'''
 docker service create -p 80:80 --replicas 1 --name myfirstapp torosent/myfirstapp
 docker service inspect --pretty myfirstapp
 docker service scale myfirstapp=5
 docker service ps myfirstapp
 docker service rm myfirstapp
-
+'''
 
 # SSH into a Swarm cluster
+'''
 ssh azureuser@myswarmclu-swarmworkshop-1234eamgmt.ukwest.cloudapp.azure.com -A -p 2200
+'''
 
-
+## Random Notes
 https://docs.docker.com/compose/compose-file/#compose-and-docker-compatibility-matrix
 Docker 17.06 does'nt supported encrypted overlay
 Docker EE supported for Linux works on 
@@ -189,4 +188,3 @@ Compose file version 3 reference
 https://docs.docker.com/compose/compose-file/
 https://docs.docker.com/docker-for-azure/deploy/
 
-</pre>
